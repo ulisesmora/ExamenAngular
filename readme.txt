@@ -1,3 +1,5 @@
+Revisar que se tenga instalado nodeJs, TypeScript y angular ClI
+
 para correr la aplicacion solo abra la consola cmd y con cd muevase a la carpeta donde este
 ubicado el proyecto angular, despues ejecute los comandos.
 npm install
