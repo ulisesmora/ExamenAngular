@@ -1,6 +1,7 @@
 import {Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
+import { Observable, throwError, timer, interval, EMPTY } from "rxjs";
+import { catchError, retry, shareReplay } from 'rxjs/operators';
 import { Character} from "../model/character";
 import { Locate} from "../model/locates";
 
@@ -23,6 +24,7 @@ export class RickandMorthyService{
         this.locate = [ new Locate("","","","")];
         
         
+        
     }
 
     
@@ -31,7 +33,16 @@ export class RickandMorthyService{
 
     getJsonCharacter(page:string):Observable<any>{
         
-        return this._http.get(this.url +page );
+        return this._http.get(this.url +page).pipe(
+            retry(5),
+            catchError(error => {
+                console.log(error);
+                return EMPTY;
+            }),
+            shareReplay()
+    
+            
+        );
         
     }
     

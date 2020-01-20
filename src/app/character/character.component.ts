@@ -1,4 +1,4 @@
-import { Component, OnInit} from "@angular/core";
+import { Component, OnInit, NO_ERRORS_SCHEMA} from "@angular/core";
 import { Character} from "../model/character";
 import { RickandMorthyService } from "../service/ram.service";
 
