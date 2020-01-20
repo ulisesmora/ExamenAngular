@@ -1,0 +1,133 @@
+.contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
+    grid-gap: 1rem;
+    align-items: center;
+    
+}
+
+
+.character{
+    background-color: rgba(225,255,255,0.65);
+    padding: 2rem; 
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 2rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 18px 111px -12px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 18px 111px -12px rgba(0,0,0,0.75);
+box-shadow: 0px 18px 111px -12px rgba(0,0,0,0.75);
+width: 15rem;
+height: 20rem;
+cursor: pointer;
+}
+
+.image-character{
+    width: 10rem;
+    border-radius: 1rem;
+    align-content: center;
+    justify-content: center;
+}
+
+.nombre{
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    text-align: center;
+    color: azure;
+}
+
+.death{
+    color: crimson;
+}
+
+.live{
+    color: rgba(9, 158, 46, 0.61);
+}
+
+.unknown{
+    color: coral;
+}
+
+.status{
+font-size: 1.15rem;
+margin: 0 auto;
+}
+
+
+.localizacion{
+    font-size: 1.15rem;
+    margin: 0 auto;
+}
+
+.dimension{
+    color: brown;
+}
+
+.clearfix{
+    margin: 0 auto;
+    display: flex;
+    width: 80%;
+    height: 5rem;
+    border-radius: 5%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+
+.forms{
+    
+    overflow-y: hidden;
+    margin: 0 auto;
+    width: 100%;
+    height: 5rem;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+
+
+
+input{
+    font-size: 1.2rem;
+    margin: 0 auto;
+    
+  padding: 1.5rem 2rem;
+  
+  border-radius: 2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 50%;
+  height: 0.00rem;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+select{
+    font-size: 1.1rem;
+	margin: 0 auto;
+  border-radius: 2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 100%;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+label{
+    margin: 0 auto;
+    margin-right: 1rem;
+    color: aliceblue;
+    font-size: 1.4rem;
+}
+
+

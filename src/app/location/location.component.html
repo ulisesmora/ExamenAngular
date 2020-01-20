@@ -1,0 +1,42 @@
+
+<div class="forms">
+    <div>
+    <input type="text" class="form-control"   name="filter2Id" placeholder="ID" [(ngModel)] = "filter2Id" >
+</div>
+
+
+<div>
+    <input type="text" class="form-control" name="filter2Name" placeholder="Name" [(ngModel)] = "filter2Name" >
+</div>
+
+
+<div>
+    <input type="text" class="form-control" name="filter2Type" placeholder="Type" [(ngModel)] = "filter2Type" >
+</div>
+    <div>
+   <input type="text" class="form-control" name="filter2Dimension" placeholder="Dimension" [(ngModel)] = "filter2Dimension" >
+</div>
+</div>
+
+
+        <div   class="contenedor"  >
+        
+            
+        
+        <div  class="character" *ngFor="let locates of location |  paginate:{itemsPerPage:20, currentPage:p}  | filter2:filter2Id | filter2:filter2Name | filter2: filter2Type | filter2:filter2Dimension" >
+                <h5 class="localizacion"> ID: <span class="dimension"> {{locates.id}} </span> </h5>
+            
+            <h3 class="nombre"> Name: {{locates.name}} </h3>
+            <h5 class="status" > Type:  <span class="live"> {{locates.type}} </span> </h5>
+            <h5 class="status" > Dimension:  <span class="dimension"> {{locates.dimension}} </span> </h5>
+           
+           
+        </div>
+        
+        </div>
+        
+        <div class="clearfix">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        
+        </div>
+    

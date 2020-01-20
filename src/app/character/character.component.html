@@ -1,0 +1,46 @@
+
+<div class="forms">
+    <div>
+    <input type="text" class="form-control" name="filterPost" placeholder="Name" [(ngModel)] = "filterPost" >
+</div>
+<div><label for="select">Status</label>
+   <select name="filterStatus" [(ngModel)] = "filterStatus">
+    <option value="Alive">Alive</option>
+    <option value="Dead">Dead</option>
+    <option value="unknown">unknown</option>
+  </select>
+</div>
+    <div>
+   <input type="text" class="form-control" name="filterLocation" placeholder="Location" [(ngModel)] = "filterLocation" >
+</div>
+</div>
+
+
+
+<div class="gif" *ngIf="!character">
+    <div class="gif">
+    <img src="https://cdn.dribbble.com/users/2545631/screenshots/5948212/rickfinal.gif" width="100%" height="500rem" alt="">
+</div>
+</div>
+
+<div *ngIf="character"  class="contenedor"  >
+
+    
+
+<div  class="character" *ngFor="let characters of character |  paginate:{itemsPerPage:20, currentPage:p}  | filter:filterPost | filter:filterStatus | filter:filterLocation " >
+    <img class="image-character" src="{{ characters.image }}" alt="">
+    <h3 class="nombre"> {{characters.name}} </h3>
+    <h5 class="status" *ngIf="characters.status == 'Alive'"> Status:  <span class="live"> {{characters.status}} </span> </h5>
+    <h5 class="status" *ngIf="characters.status == 'Dead'"> Status:  <span class="death"> {{characters.status}} </span> </h5>
+    <h5 class="status" *ngIf="characters.status == 'unknown'"> Status:  <span class="unknown"> {{characters.status}} </span> </h5>
+   
+    <h5 class="localizacion"> Location: <span class="dimension"> {{characters.location}} </span> </h5>
+    
+</div>
+
+</div>
+
+<div class="clearfix">
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
